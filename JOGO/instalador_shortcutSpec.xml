@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<shortcuts>
+    <skipIfNotSupported/>
+    <programGroup defaultName="Aplicacao" location="applications"/>
+    <shortcut applications="no" desktop="yes" initialState="noShow"
+        name="Jogatina" programGroup="no" startMenu="no" startup="no" target="$INSTALL_PATH/jogatina/jogatina.jar"/>
+</shortcuts>

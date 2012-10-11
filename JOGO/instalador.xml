@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<installation version="1.0">
+    <info>
+        <appname>Baralho</appname>
+        <appversion>1.0</appversion>
+        <authors>
+            <author email="nasser123@bol.com.br" name="Nasser Rahman"/>
+        </authors>
+        <uninstaller name="Uninstaller.jar" write="yes"/>
+        <requiresjdk>no</requiresjdk>
+        <writeinstallationinformation>no</writeinstallationinformation>
+        <pack200/>
+        <run-privileged condition="izpack.windowsinstall.vista|izpack.windowsinstall.7"/>
+    </info>
+    <guiprefs height="480" resizable="no" width="640">
+        <modifier key="useFlags" value="yes"/>
+        <modifier key="langDisplayType" value="default"/>
+    </guiprefs>
+    <locale>
+        <langpack iso3="por"/>
+    </locale>
+    <resources>
+        <res id="LicencePanel.licence" parse="yes" src="/home/nasser/Downloads/baralho_java/JOGO/COPYING.txt"/>
+        <res id="shortcutSpec.xml" src="instalador_shortcutSpec.xml"/>
+        <res id="Unix_shortcutSpec.xml" src="instalador_Unix_shortcutSpec.xml"/>
+        <res id="installer.langsel.img" src="/home/nasser/Downloads/baralho_java/JOGO/suits.jpg"/>
+    </resources>
+    <panels>
+        <panel classname="CheckedHelloPanel"/>
+        <panel classname="LicencePanel"/>
+        <panel classname="PacksPanel"/>
+        <panel classname="TargetPanel"/>
+        <panel classname="InstallPanel"/>
+        <panel classname="ShortcutPanel"/>
+        <panel classname="SimpleFinishPanel"/>
+    </panels>
+    <variables>
+        <variable name="DesktopShortcutCheckboxEnabled" value="true"/>
+    </variables>
+    <packs>
+        <pack name="Sistema" preselected="yes" required="no">
+            <description>Diretório que contém todos os arquivos necessários para a instalação</description>
+            <file override="update"
+                src="/home/nasser/Downloads/baralho_java/JOGO/jogatina.jar" targetdir="$INSTALL_PATH/jogatina/">
+                <os family="Unix"/>
+            </file>
+            <file override="update"
+                src="/home/nasser/Downloads/baralho_java/JOGO/lib" targetdir="$INSTALL_PATH/jogatina/"/>
+            <file override="update"
+                src="/home/nasser/Downloads/baralho_java/JOGO/baralho" targetdir="$INSTALL_PATH/jogatina/"/>
+            <file override="update"
+                src="/home/nasser/Downloads/baralho_java/JOGO/jogatina" targetdir="$INSTALL_PATH/jogatina/"/>
+        </pack>
+    </packs>
+    <native name="ShellLink.dll" type="izpack"/>
+    <native name="ShellLink_x64.dll" type="izpack"/>
+</installation>
